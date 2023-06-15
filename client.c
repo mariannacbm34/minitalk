@@ -6,7 +6,7 @@
 /*   By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:52:58 by marmonte          #+#    #+#             */
-/*   Updated: 2023/06/15 16:46:05 by marmonte         ###   ########.fr       */
+/*   Updated: 2023/06/15 17:30:29 by marmonte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	ft_atoi(const char *str)
 	return (result * sinal);
 }
 
-int check_pid(char *pid)
+int	check_pid(char *pid)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (pid[i])
@@ -51,7 +51,7 @@ int check_pid(char *pid)
 void	send_signals(int pid, char byte)
 {
 	int	bit;
-	
+
 	bit = 0;
 	while (bit < 8)
 	{
@@ -74,14 +74,14 @@ void	send_signals(int pid, char byte)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	if (argc != 3)
 	{
-		write(1, "🌸 USAGE: ./client [PID] [MESSAGE] 🌸\n", 42);
+		write(1, "🌸 USAGE: ./client [PID] [MESSAGE] 🌸\n", 43);
 		return (0);
 	}
 	if (check_pid(argv[1]))

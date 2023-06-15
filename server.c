@@ -6,13 +6,13 @@
 /*   By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:52:55 by marmonte          #+#    #+#             */
-/*   Updated: 2023/06/15 16:11:36 by marmonte         ###   ########.fr       */
+/*   Updated: 2023/06/15 17:28:17 by marmonte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -69,12 +69,12 @@ int	main(void)
 {
 	__pid_t				pid;
 	struct sigaction	sigact;
-	
+
 	pid = getpid();
-	write(1, "Server PID: ", 12);
+	write(1, "Server PID: ", 13);
 	ft_putnbr(pid);
 	ft_putchar('\n');
-	write(1, "Waiting for signals...\n", 23);
+	write(1, "Waiting for signals...\n", 24);
 	sigact.sa_flags = SA_RESTART;
 	sigact.sa_handler = read_signals;
 	sigaction(SIGUSR1, &sigact, NULL);
