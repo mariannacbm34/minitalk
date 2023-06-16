@@ -6,7 +6,7 @@
 /*   By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:52:45 by marmonte          #+#    #+#             */
-/*   Updated: 2023/06/15 15:55:00 by marmonte         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:03:24 by marmonte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-void	read_signals(int num);
+void	read_signals(int bit);
 int		ft_atoi(const char *str);
 int		check_pid(char *pid);
 void	send_signals(int pid, char byte);
-int		ft_printf(const char *format, ...);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:52:58 by marmonte          #+#    #+#             */
-/*   Updated: 2023/06/15 17:30:29 by marmonte         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:22:13 by marmonte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc != 3)
 	{
+		write(1, "Error: Invalid number of arguments 🥺\n", 41);
 		write(1, "🌸 USAGE: ./client [PID] [MESSAGE] 🌸\n", 43);
 		return (0);
 	}
@@ -91,10 +92,10 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 3)
 	{
-		write(1, "🌸 Sending message... 🌸\n", 30);
+		write(1, "Sending message...\n", 20);
 		while (argv[2][i])
 			send_signals(ft_atoi(argv[1]), argv[2][i++]);
-		write(1, "🌟 Message sent! 🌟\n", 25);
+		write(1, "🌸 Message sent! 🌸\n", 25);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: marmonte <marmonte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:52:55 by marmonte          #+#    #+#             */
-/*   Updated: 2023/06/15 17:28:17 by marmonte         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:31:18 by marmonte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int nbr)
 {	
-	long	nbr;
-
-	nbr = n;
 	if (nbr < 0)
 	{
 		ft_putchar('-');
@@ -49,12 +46,12 @@ char	math_power(unsigned char base, unsigned char power)
 	return (result);
 }
 
-void	read_signals(int num)
+void	read_signals(int bit)
 {
 	static unsigned int	power;
 	static unsigned int	byte;
-
-	if (num == SIGUSR1)
+	
+	if (bit == SIGUSR1)
 		byte += math_power(2, power);
 	power++;
 	if (power == 8)
